@@ -5,47 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css" class="style">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>About me</title>
 </head>
 <body>
     <div class="container">
+		<div class="logo-header">
+			<img src="lindzen-logo.png">
+		</div>
+        <!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" onclick="myFunction()" class="active">&nbsp;</a>
+  <div id="myLinks">
+	<a href="index.html">Home</a></li>
+    <a href="projects.html">Projects</a>
+    <a href="experience.html" class="active">Experience</a>
+    <a href="aboutME.html">About me</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
         <div class="navbar">
-            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="aboutME.html">About me</a></li>
-                    <li><a href="experience.html" class="active">Experience</a></li>
+                    <li><a href="aboutME.html" class="active">About me</a></li>
+                    <li><a href="experience.html">Experience</a></li>
                     <li><a href="projects.html">Projects</a></li>
                 </ul>
-            </nav>
-            </div>  
-            <div class="row">
-                <div class="col-1">
-                    <h2>Previous Experience</h2>
-                    <h3>Workplaces</h3>
-                    <p> 2020-2022 DocuPartner - Accounting</p>
-                    <p> Circle K - Part Time during Studies</p>
-                    <p> Finanslån - Account Manager</p>
-                    <p>2012-2014 Boxmedia AB- Account Manager</p>
-                    
-
-                <h4>Education</h4>
-                <p>2019-2020 Södertörns Högskola - BSC Economics</p>
-                <p>2017-2019 Högskolan i Gävle - BSC Economics</p>
-                <p>2014-2015 Alma Folkhögskola </p>
-                <p>2009-2012 YBC - IB diploma</p>
-                <p>2000-2009 ISL- Elementary School</p>
-
-                     </div>
-                     <div class="col-2">
-                        <img src="cocacola.jpg" class="picture">
-                        <div class="color-box"></div>
-                     </div>
-                     
-              </div>  
-        </div>
-        
-    
+            </nav>  
+        </div>  
+        <h2>Experience and Education</h2>
+        <table id = "tb1">
+            <tr>
+                <th>Experience</th>
+                <th>School</th>
+            </tr>
+        </table>
+        <script>
+            fetch("myCV.json")
+                .then(response => response.json())
+                .then(data => {
+                    for (var i = 0; i<data.items.length; i++){
+                        let experience = data.items[i].experience;
+                        let school = data.items[i].school;
+                            document.querySelector("#tb1").innerHTML += `
+                                <tr>
+                                    <td>${experience}</td>
+                                    <td>${school}</td>
+                                </tr>`;
+                    }
+                })
+        </script>
+    <script src="javascript.js"></script>
+   
 </body>
 </html>

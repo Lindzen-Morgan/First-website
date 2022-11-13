@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "experience": "DocuPartner-Accounting",
+            "school":"Södertörns Högskola- BSC Economics"
+            
+        },
+        {
+            "experience":"Circle K - Sales",
+            "school":"Högskolan i Gävle- BSC Economics"
+        },
+        {
+            "experience":"Finanslån- Account manager",
+            "school":"YBC-High School"
+        },
+        {
+            "experience":"Boxmedia - Account manager",
+            "school":"International School of Luxembourg- Elementary School"
+
+        }
+    ]
+}
