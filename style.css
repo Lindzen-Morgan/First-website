@@ -122,13 +122,14 @@
         left: -40px;
         top: 8px;
     }
-    .col-2{
+    .col-2 {
         position: relative;
         flex-basis: 60%;
         display: flex;
         align-items: center;  
+       
     }
-    .col-2 .picture{
+    .col-2 img{
         width: 50%;
         
     }
